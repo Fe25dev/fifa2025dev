@@ -1,0 +1,51 @@
+<!-- app.component.html -->
+<body>
+<div class="container">
+  <form class="form-group" #form="ngForm" (ngSubmit)="searchPlayer()">
+    <h2>{{ title }}</h2>
+        <div class="searchId">
+          <label for="playerId">Ingrese ID numerico Del jugador a buscar:  </label>
+          <input 
+            name="playerId" 
+            [(ngModel)]="playerId" 
+            #playerIdField="ngModel"
+            class="form-control" 
+            placeholder="numero de Id "
+            type="number"
+            min="1"
+            required
+          />
+          <button type="submit">Buscar</button>
+          
+          <div *ngIf="playerIdField.invalid && playerIdField.touched" class="text-danger">
+            <small *ngIf="playerIdField.errors?.['min']">Debe ser mayor que 0.</small>
+            <small *ngIf="playerIdField.errors?.['type']">Debe ser numerico.</small>
+          </div>
+          <div  class="error-message" *ngIf="errorMessage">
+            <p>{{ errorMessage }}</p>
+          </div>
+
+        </div>
+    <div class="player-chart-container">
+
+      <div *ngIf="player" class="player-details">
+        <h2>{{ player?.long_name }}</h2>
+          <div>
+            <p><strong>Posición:</strong> {{ player.player_positions }}</p>
+            <p><strong>Habilidad en Tiro:</strong> {{ player.shooting }}</p>
+            <p><strong>Habilidad en Pase:</strong> {{ player.passing }}</p>
+            <p><strong>Habilidad en Regate:</strong> {{ player.dribbling }}</p>
+            <p><strong>Habilidad en Potencial:</strong> {{ player.potential }}</p>
+            <p><strong>Valor overall:</strong> {{ player.overall }}</p>
+          </div>
+      </div>
+
+    <div class="chart-container">
+          <canvas  id="MyChart" >{{ chart }}</canvas>
+    </div>
+   </div>
+  </form>
+</div>
+</body>
+
+

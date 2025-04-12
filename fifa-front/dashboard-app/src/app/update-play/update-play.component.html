@@ -1,0 +1,68 @@
+<body>
+  
+  <div class="conteiner">
+    
+  <div class="searchId">
+     <h2>Ingrese id del jugador a buscar</h2>
+     <input [(ngModel)]="playerId" placeholder="Ingrese ID del jugador" id="playerId" />
+     <button (click)="searchPlayer()">Buscar</button>
+     <div class="error-message" *ngIf="errorMessage">
+         <p>{{ errorMessage }}</p>
+    </div>
+  </div>
+
+
+    <div class="player-container">
+      <div *ngIf="player" class="player-details">
+           <h2>Datos del Jugador Encontrado</h2>
+        <div>
+          <p><strong>Nombre:</strong> {{ player.long_name }}</p>
+          <p><strong>Club:</strong> {{ player.club_name }}</p>
+          <p><strong>Posición:</strong> {{ player.player_positions }}</p>
+          <p><strong>Shotting Hability:</strong> {{ player.shooting }}</p>
+          <p><strong>Passing Hability:</strong> {{ player.passing }}</p>
+          <p><strong>Dribbling Hability:</strong> {{ player.dribbling }}</p>
+          <p><strong>Potential Hability:</strong> {{ player.potential }}</p>
+          <p><strong>Overall Hability:</strong> {{ player.overall }}</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="updatePlayer">
+      <h2>Ingrese los datos a actualizar</h2>
+      <div class="container">
+        
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <input [(ngModel)]="playerData.name" name="name" class="form-control" required />
+    
+            <label for="club">club</label>
+            <input [(ngModel)]="playerData.club" name="club" class="form-control" />
+
+            <label for="position">Posición</label>
+            <input [(ngModel)]="playerData.position" name="position" class="form-control" />
+          
+            <label for="shooting">Tiros</label>
+            <input [(ngModel)]="playerData.shooting" name="shooting" class="form-control" />
+
+            <label for="passing">Pases</label>
+            <input [(ngModel)]="playerData.passing" name="passing" type="number" class="form-control" />
+          
+            <label for="dribbling">Dribbling</label>
+            <input [(ngModel)]="playerData.dribbling" name="dribbling" class="form-control" />
+          
+            <label for="potential">Potential</label>
+            <input [(ngModel)]="playerData.potential" name="potential" class="form-control" />
+
+            <label for="overall">Overall</label>
+            <input [(ngModel)]="playerData.overall" name="overall" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-primary">Actualizar Jugador</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+</body>

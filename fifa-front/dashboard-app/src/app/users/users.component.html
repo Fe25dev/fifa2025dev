@@ -1,0 +1,104 @@
+<body>
+<div class="container">
+  <h2>{{ title }}</h2>
+  <!-- Filtros -->
+  <div class="form-group">
+    <label for="name">Nombre</label>
+   <input 
+      name="name" 
+      [(ngModel)]="name" 
+      #nameField="ngModel"
+      class="form-control" 
+      placeholder="Filtrar por nombre"
+      minlength="3" 
+    />
+    <div *ngIf="nameField.invalid && nameField.touched" class="text-danger">
+      <small *ngIf="nameField.errors?.['minlength']">Mínimo 3 caracteres.</small>
+    </div>
+    <label for="Club">Club</label>
+    <input 
+      name="club" 
+      [(ngModel)]="club" 
+      #clubField="ngModel"
+      class="form-control" 
+      placeholder="Filtrar por club"
+      pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$" 
+    />
+    <div *ngIf="clubField.invalid && clubField.touched" class="text-danger">
+      <small *ngIf="clubField.errors?.['pattern']">Solo letras y espacios.</small>
+    </div>
+    <label for="Nacion">Nacion</label>
+    <input 
+      name="nacion" 
+      [(ngModel)]="nacion" 
+      #nacionField="ngModel"
+      class="form-control" 
+      placeholder="Filtrar por nación"
+      pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$" 
+    />
+    <div *ngIf="nacionField.invalid && nacionField.touched" class="text-danger">
+      <small *ngIf="nacionField.errors?.['pattern']">Solo letras y espacios</small>
+    </div>
+    <button (click)="getPlayersPage()">Filtrar</button>
+    </div>
+    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <table class="result">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Club</th>
+        <th>Nación</th>
+        <th>Valor en euros</th>
+        <th>Edad</th>
+      </tr>
+    </thead>
+    <tbody class="resultBody">
+      <tr *ngFor="let player of players">
+        <td>{{ player.long_name }}</td>
+        <td>{{ player.club_name }}</td>
+        <td>{{ player.nationality_name }}</td>
+        <td>{{ player.value_eur }}</td>
+        <td>{{ player.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- Paginación -->
+<div *ngIf="totalPages > 1">
+  <!-- Botón Anterior -->
+  <button *ngIf="page > 1" (click)="changePage(page - 1)">Anterior</button>
+
+  <!-- Botón numerado de la primera página -->
+  <button *ngIf="page > 2" (click)="changePage(1)">1</button>
+
+  <!-- Botón numerado de la página anterior -->
+  <button *ngIf="page > 1" (click)="changePage(page - 1)">
+    {{ page - 1 }}
+  </button>
+
+  <!-- Botón de la página actual -->
+  <button class="active">{{ page }}</button>
+
+  <!-- Botón numerado de la página siguiente -->
+  <button *ngIf="page < totalPages" (click)="changePage(page + 1)">
+    {{ page + 1 }}
+  </button>
+
+  <!-- Botón numerado de la última página -->
+  <button *ngIf="page < totalPages - 1" (click)="changePage(totalPages)">{{ totalPages }}</button>
+
+  <!-- Botón Siguiente -->
+  <button *ngIf="page < totalPages" (click)="changePage(page + 1)">Siguiente</button>
+</div>
+
+ <!-- Mensaje -->
+  <div class="message-info" *ngIf="players.length > 0">
+  <p>Total de jugadores en resultado:{{totalPlayers}},Total de jugadores por pagina definidos:{{pageSize}}</p>
+</div>
+
+  <!-- Botones de exportación -->
+  <button (click)="exportToCSV()">Exportar a CSV</button>
+  <button (click)="exportToXLSX()">Exportar a XLSX</button>
+</div>
+</body>

@@ -1,0 +1,109 @@
+
+/* Estilo para el contenedor principal */
+.container {
+  width: auto;
+  margin: auto ;/*revisar esta linea*/
+  padding: 10px;/*revisar esta linea*/
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+/* Encabezado del dashboard */
+h1 {
+  color: #007bff;  /* Azul */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #00799f;  /* Azul */
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+
+}
+h3 {
+  color: #00799f;  /* Azul */
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+.searchId {
+  display: flex;
+  gap: 10px; /* espacio entre los divs */
+  flex-wrap: wrap;
+  flex: 1 1 50%; 
+  box-sizing: border-box; /* Para que no se desborden con márgenes/paddings */
+  padding: 10px;
+}
+.player-chart-container {
+  display: grid;
+  grid-template-columns: 30% 70% ; 
+  grid-template-rows: auto; 
+  gap: 20px; 
+  height: 73vh; /* Altura basada en el 80% de la altura de la pantalla */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.player-details {
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  overflow-y: auto; /* Si el contenido excede, habilita el desplazamiento */
+}
+.chart-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  display: flex; /* Usamos Flexbox para centrar el contenido */
+  justify-content: center; /* Centra el gráfico horizontalmente */
+  align-items: center; /* Centra el gráfico verticalmente */
+  overflow-y: auto; 
+}
+.error-message{
+  color:red;
+  font-size: 14px;
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid #e74c3c; /* rojo */
+  background-color: #ffe5e5;
+}
+
+/* errores */
+input.ng-valid.ng-touched {
+  border: 1px solid #2ecc71; /* verde */
+  background-color: #e9f9ee;
+}
+.text-danger {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 15px;
+  display: block;
+}
+button {
+  flex: 0 1 100px;              /* El botón tiene un ancho fijo */       
+  padding: 5px;
+  height: 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.form-group input {                    /* Los inputs ocupan el espacio restante */     
+  height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .player-chart-container {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, los dos divs se colocan en una sola columna */
+    grid-template-rows: auto; /* Las filas se adaptan al contenido */
+  }
+
+  .chart-container {
+    max-height: 300px; /* Ajusta la altura máxima del gráfico en pantallas pequeñas */
+    overflow-y: auto; /* Permite desplazamiento si el gráfico es más grande */
+  }
+}

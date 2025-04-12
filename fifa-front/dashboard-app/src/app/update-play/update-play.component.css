@@ -1,0 +1,82 @@
+
+.conteiner {
+  display: flex;
+  justify-content: space-between; /* Asegura que las secciones estén separadas */
+  gap: 20px;
+  flex-wrap: wrap; /* Permite que las secciones se envuelvan si no caben en una fila */
+  width: 95%;
+  margin-top: 10px auto;
+  padding: 20px;
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+.searchId {
+  flex: 1 1 100%; 
+  box-sizing: border-box; /* Para que no se desborden con márgenes/paddings */
+}
+/* Estilo para cada sección dentro del contenedor */
+.player-container, .updatePlayer {
+  flex: 1 1 45%; /* Las secciones ocupan el 45% del ancho, y se ajustan */
+  box-sizing: border-box; /* Para que no se desborden con márgenes/paddings */
+}
+
+h2 {
+  color: #00799f;  /* Azul */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;        
+  flex-wrap: wrap;  /* Permite que los elementos se ajusten a la siguiente fila si no hay suficiente espacio */
+  gap: 10px;         
+}
+
+.form-group label {
+  width: 90px;                /* Ancho fijo para las etiquetas */
+  margin-right: 10px;        
+  display: inline-block;
+}
+
+.form-group input {
+  flex: 0 0 80%;                /* Los inputs ocupan el 80% del espacio disponible */
+  margin-bottom: 10px;         
+  height: 20;
+  background-color: lightyellow;
+}
+
+button {
+  flex: 0 1 100px;              /* El botón tiene un ancho fijo */
+  margin-top: auto;             /* Margen superior para separarlo de los inputs */
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+} 
+
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column; /* Las secciones se apilan verticalmente */
+    gap: 10px; /* Menos espacio entre las secciones */
+  }
+  .player-container, .updatePlayer {
+    flex: 1 1 100%; /* Las secciones ocupan todo el ancho */
+  }
+}
+
+
+
+
+

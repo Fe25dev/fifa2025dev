@@ -1,0 +1,112 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 50px;
+  padding: 90px;
+  height: 100%;
+  background-color: #d6eaf8;
+  color: #333;  
+  display: flex;
+  justify-content: center;   
+  align-items: center;  
+}
+
+h1 {
+  color: #007bff;  
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+h2 {
+  color: #00799f;  
+  font-size: 1.5rem;
+  margin-bottom: 20px; 
+}
+.conteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;   
+  border-radius: 10px;        /* Bordes redondeados */
+  border: 3px solid #007bff;  /* Borde azul de 3px */
+  padding: 30px;             
+  gap: 20px;                  /* Espacio entre los elementos internos */
+  flex-wrap: wrap;            /* Permite que las secciones se envuelvan si no caben en una fila */
+  background-color: white;    /* Fondo blanco */
+  max-width: 600px;           /* Limita el tamaño máximo del formulario */
+  margin: auto ;          
+}
+
+.image-container img {
+  width: 400px;               /* Define un tamaño adecuado para la imagen */
+  height: auto;               /* Mantiene la proporción de la imagen */
+  border-radius: 20px;
+  margin: 20px;
+  padding: 40px;      
+}
+
+.login-form {
+  display: flex;              
+  flex-direction: column;
+  flex-wrap: wrap;             /* Permite que los elementos se ajusten a la siguiente fila si no hay suficiente espacio */
+  gap: 10px;                   /* Espacio entre los elementos */
+  width: 100%;   
+}
+
+.login-form label {
+  width: 90px;                /* Ancho fijo para las etiquetas */
+  margin-right: 15px;         
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.login-form input {
+  margin-bottom: 5px;          
+  padding: 8px;
+  font-size: 16px;
+}
+
+button {
+  flex: 0 1 60px;              /* El botón tiene un ancho fijo */
+  margin-top: 10px;             
+  padding: auto;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+} 
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  background-color: #d6eaf8;
+  color: #333;  
+  display: flex;
+  justify-content: center;  
+  align-items: center;  
+ 
+}
+  .conteiner {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px; /* Menos espacio entre las secciones */
+  }
+
+}
+
+
+
+
+

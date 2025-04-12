@@ -1,0 +1,101 @@
+body {
+  margin-top: 10px;
+  padding: 10px;
+}
+.container {
+  width: auto;
+  margin: auto;
+  padding: 10px;
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+h1 {
+  color: #007bff;  /* Azul */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #00799f;  /* Azul */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+table{
+  margin: 10px;
+  min-height: 200px ;
+  width: 98%;
+  border: 1px solid black;
+}
+.result .resultBody{
+  display: table-row-group;
+  overflow-y: auto;
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;           
+  gap: 10px;       
+  position: relative;          
+}
+.form-group label {
+  width: 90px;               
+  margin-right: 10px;        
+  display: inline-block;
+}
+.form-group input {
+  flex: 1;                      /* Los inputs ocupan el espacio restante */
+  margin-bottom: 10px;       
+  height: 20;
+}
+
+button {
+  flex: 0 1 100px;              /* El botón tiene un ancho fijo */
+  margin-top: auto;          
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+} 
+
+/* errores */
+input.ng-invalid.ng-touched {
+  border: 1px solid #e74c3c; /* rojo */
+  background-color: #ffe5e5;
+}
+
+/* errores */
+input.ng-valid.ng-touched {
+  border: 1px solid #2ecc71; /* verde */
+  background-color: #e9f9ee;
+}
+
+/*  mensajes errores */
+.text-danger {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Media Query para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+  .player-chart-container {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, los dos divs se colocan en una sola columna */
+    grid-template-rows: auto; /* Las filas se adaptan al contenido */
+  }
+
+  .chart-container {
+    max-height: 300px; /* Ajusta la altura máxima del gráfico en pantallas pequeñas */
+    overflow-y: auto; /* Permite desplazamiento si el gráfico es más grande */
+  }
+}

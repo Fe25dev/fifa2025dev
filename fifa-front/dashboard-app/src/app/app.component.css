@@ -1,0 +1,9 @@
+
+/* Estilo global: Body y fondo general */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 50px;
+  padding: 50px;
+  background-color: #6CE7F0;  /* Color de fondo suave */
+  color: #333;  /* Color del texto */
+}

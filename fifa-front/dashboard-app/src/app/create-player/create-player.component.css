@@ -1,0 +1,85 @@
+
+
+
+/* Estilo para el contenedor de las secciones */
+.conteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* Asegura que las secciones estén separadas */
+  align-items: center;   
+  gap: 20px;   /* Espacio entre las secciones */
+  flex-wrap: wrap;   /* Permite que las secciones se envuelvan si no caben en una fila */
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  margin-top: 10px auto;/*revisar esta linea*/
+}
+
+h2 {
+  color: #00799f;  /* Azul */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+/* seccion players ----------------------------------------------------------------------------*/
+
+.form-group {
+  display: flex;               /* Usa Flexbox para los elementos hijos */
+  margin: 40px;
+  padding: 40px;
+  flex-direction: column;
+  flex-wrap: wrap;             /* Permite que los elementos se ajusten a la siguiente fila si no hay suficiente espacio */
+  gap: 10px;                   /* Espacio entre los elementos */
+
+    width: 95%;
+  margin: 10px auto;/*revisar esta linea*/
+  padding: 10px;/*revisar esta linea*/
+  background-color: #ffffff;  /* Fondo blanco */
+  border-radius: 8px;
+  /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+}
+
+
+.form-group label {
+  width: 90px;                /* Ancho fijo para las etiquetas */
+  margin-right: 15px;          /* Espacio a la derecha de la etiqueta */
+  display: inline-block;
+}
+
+.form-group input {
+  flex: 0 0 80%;                /* Los inputs ocupan el 80% del espacio disponible */
+  margin-bottom: 10px;          /* Espacio debajo de los inputs */
+  height: 20;
+}
+
+button {
+  flex: 0 1 100px;              /* El botón tiene un ancho fijo */
+  margin-top: auto;             /* Margen superior para separarlo de los inputs */
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+} 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column; /* Las secciones se apilan verticalmente */
+    gap: 10px; /* Menos espacio entre las secciones */
+  }
+  .player-container, .updatePlayer {
+    flex: 1 1 100%; /* Las secciones ocupan todo el ancho */
+  }
+}
+
+
+
+
+

@@ -1,0 +1,33 @@
+<body>
+<div class="conteiner">
+
+  <form (ngSubmit)="onSubmit()" #playerForm="ngForm" class= "form-group">
+      <h2>Crear Nuevo Jugador</h2>
+    <div>
+      <label for="name">Nombre  </label>
+      <input type="text" id="name" name="name" [(ngModel)]="player.long_name" required>
+    </div>
+    <div>
+      <label for="age">Edad  </label>
+      <input type="number" id="age" name="age" [(ngModel)]="player.age" required>
+    </div>
+    <div>
+      <label for="club">Club</label>
+      <input type="text" id="club" name="club" [(ngModel)]="player.club_name" required>
+    </div>
+    <div>
+      <label for="nationality">Nacionalidad  </label>
+      <input type="text" id="nationality" name="nationality" [(ngModel)]="player.nationality_name" required>
+    </div>
+    <div>
+      <button type="submit" [disabled]="!playerForm.valid">Crear Jugador</button>
+    </div>
+  </form>
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+  <div *ngIf="successMessage" class="success-message">
+    <p>{{ successMessage }}</p>
+  </div>
+</div>
+</body>

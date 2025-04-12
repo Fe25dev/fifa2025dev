@@ -1,0 +1,12 @@
+<!-- 
+<app-navbar></app-navbar>
+<br>
+<router-outlet></router-outlet>
+ -->
+ 
+<!-- Si el usuario no está autenticado, mostramos el componente de login -->
+<app-login *ngIf="!isAuthenticated"></app-login>
+<!-- Si el usuario está autenticado, mostramos el navbar y router-outlet -->
+<app-navbar *ngIf="isAuthenticated"></app-navbar>
+<br>
+<router-outlet *ngIf="isAuthenticated"></router-outlet>

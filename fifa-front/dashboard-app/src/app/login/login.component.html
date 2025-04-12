@@ -1,0 +1,28 @@
+<body>
+<div class="conteiner">
+<form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h2>Ingrese sus datos para Sesion</h2>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email">
+  <div *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+    <p *ngIf="loginForm.controls.email.errors?.['required']" class="error-message">El email es obligatorio.</p>
+    <p *ngIf="loginForm.controls.email.errors?.['email']" class="error-message">El email no es válido.</p>
+  </div>
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" formControlName="password" autocomplete="off">
+  <div *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+    <p *ngIf="loginForm.controls.password.errors?.['required']" class="error-message">La contraseña es obligatoria.</p>
+    <p *ngIf="loginForm.controls.password.errors?.['minlength']" class="error-message">La contraseña debe tener al menos 6 caracteres.</p>
+  </div>
+
+  <!--<button type="submit">Login</button>-->
+  <button type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+</form>
+ 
+</div>
+ <div class= "image-container" >
+      <img src="fifa2logo.jpg" alt="Imagen de ejemplo">
+</div>
+</body>
